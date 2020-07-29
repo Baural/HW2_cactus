@@ -11,7 +11,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="crG-GI-w9u">
             <objects>
-                <viewController id="ZAx-4K-bnh" customClass="OnboardingViewController" sceneMemberID="viewController">
+                <viewController id="ZAx-4K-bnh" customClass="OnboardingViewController" customModule="Cactus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JMu-hz-TuU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,22 +24,35 @@
                                 <rect key="frame" x="243" y="723" width="151" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="primaryColor"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Next →">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapNextButton" destination="ZAx-4K-bnh" eventType="touchUpInside" id="3eP-dH-RsX"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07i-Cj-nA4">
-                                <rect key="frame" x="30" y="119" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="тест" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07i-Cj-nA4">
+                                <rect key="frame" x="25" y="98" width="364" height="227"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" name="mainColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Qox-oO-3Ys">
+                                <rect key="frame" x="188" y="825" width="39" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="didTapNextButton" destination="ZAx-4K-bnh" eventType="valueChanged" id="N1h-Dn-nv8"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="TCo-O3-NYe"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="oqF-04-Gz8" id="YNH-Kr-rQr"/>
+                        <outlet property="nextButton" destination="szO-Rl-3Kk" id="6B8-gx-sqI"/>
+                        <outlet property="pageControl" destination="Qox-oO-3Ys" id="yo7-MK-32G"/>
                         <outlet property="textLabel" destination="07i-Cj-nA4" id="jrU-eH-yTy"/>
                     </connections>
                 </viewController>
