@@ -14,6 +14,9 @@
 		D9C1B5A224D0961600E461E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9C1B5A024D0961600E461E0 /* LaunchScreen.storyboard */; };
 		D9CBB84B24D11C2900090837 /* BreakViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB84A24D11C2900090837 /* BreakViewController.swift */; };
 		D9CBB84D24D1A0E100090837 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB84C24D1A0E100090837 /* OnboardingViewController.swift */; };
+		D9CBB85324D1E6C400090837 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB85224D1E6C400090837 /* SessionManager.swift */; };
+		D9CBB85524D1E6E900090837 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB85424D1E6E900090837 /* Session.swift */; };
+		D9CBB85724D1E9EA00090837 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBB85624D1E9EA00090837 /* CountdownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		D9C1B5A324D0961600E461E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D9CBB84A24D11C2900090837 /* BreakViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakViewController.swift; sourceTree = "<group>"; };
 		D9CBB84C24D1A0E100090837 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D9CBB85224D1E6C400090837 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		D9CBB85424D1E6E900090837 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		D9CBB85624D1E9EA00090837 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +64,8 @@
 		D9C1B59424D0961600E461E0 /* Cactus */ = {
 			isa = PBXGroup;
 			children = (
+				D9CBB85124D1E68300090837 /* Session */,
 				D9C1B59524D0961600E461E0 /* AppDelegate.swift */,
-				D9C1B59924D0961600E461E0 /* SessionViewController.swift */,
 				D9C1B59B24D0961600E461E0 /* Main.storyboard */,
 				D9C1B59E24D0961600E461E0 /* Assets.xcassets */,
 				D9C1B5A024D0961600E461E0 /* LaunchScreen.storyboard */,
@@ -68,6 +74,33 @@
 				D9CBB84C24D1A0E100090837 /* OnboardingViewController.swift */,
 			);
 			path = Cactus;
+			sourceTree = "<group>";
+		};
+		D9CBB84F24D1E65500090837 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9CBB85224D1E6C400090837 /* SessionManager.swift */,
+				D9CBB85424D1E6E900090837 /* Session.swift */,
+				D9CBB85624D1E9EA00090837 /* CountdownTimer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9CBB85024D1E67100090837 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D9C1B59924D0961600E461E0 /* SessionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D9CBB85124D1E68300090837 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				D9CBB85024D1E67100090837 /* Controller */,
+				D9CBB84F24D1E65500090837 /* Model */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +176,10 @@
 			files = (
 				D9C1B59A24D0961600E461E0 /* SessionViewController.swift in Sources */,
 				D9C1B59624D0961600E461E0 /* AppDelegate.swift in Sources */,
+				D9CBB85524D1E6E900090837 /* Session.swift in Sources */,
+				D9CBB85724D1E9EA00090837 /* CountdownTimer.swift in Sources */,
 				D9CBB84B24D11C2900090837 /* BreakViewController.swift in Sources */,
+				D9CBB85324D1E6C400090837 /* SessionManager.swift in Sources */,
 				D9CBB84D24D1A0E100090837 /* OnboardingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
