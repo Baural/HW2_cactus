@@ -9,13 +9,12 @@
 import UIKit
 
 class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, SessionManagerDelegate {
-
     
-
-    
+    @IBOutlet var countDownLabel: UILabel!
     @IBOutlet var cactusImageView: UIImageView!
     @IBOutlet var plantButton: UIButton!
     @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var giveUpButton: UIButton!
     lazy var sessionManager = SessionManager(delegate: self)
     
   
@@ -27,6 +26,11 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         plantButton.layer.cornerRadius = 14
         plantButton.layer.masksToBounds = true
         
+        giveUpButton.layer.cornerRadius = 14
+        giveUpButton.layer.masksToBounds = true
+        giveUpButton.layer.borderWidth = 1
+        giveUpButton.layer.borderColor = UIColor(named: "textColor")?.cgColor
+               
         pickerView.dataSource = self
         pickerView.delegate = self
     }
@@ -66,44 +70,44 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         
         pickerView.isHidden = true
         plantButton.isHidden = true
-//        countdownLabel.isHidden = false
+        countDownLabel.isHidden = false
 //        cancelButton.isHidden = false
-//
+
 //        updateCancelButtonTitle(secondsLeft: 10)
     }
     
     func sessionTimeLeftChanged(session: Session, secondsLeft: Int) {
         showTimeLeft(secondsLeft: secondsLeft)
         
-//        let secondsPassed = session.durationInSeconds - secondsLeft
-//        if secondsPassed < 10 {
+        let secondsPassed = session.durationInSeconds - secondsLeft
+        if secondsPassed < 10 {
 //            updateCancelButtonTitle(secondsLeft: 10 - secondsPassed)
-//        } else if secondsPassed == 10 {
+        } else if secondsPassed == 10 {
 //            cancelButton.isHidden = true
-//            giveUpButton.isHidden = false
-//        }
+            giveUpButton.isHidden = false
+        }
     }
     
     func showTimeLeft(secondsLeft: Int) {
-//        countdownLabel.text = String(format: "%02d:%02d", secondsLeft / 60, secondsLeft % 60)
+        countDownLabel.text = String(format: "%02d:%02d", secondsLeft / 60, secondsLeft % 60)
     }
     
     func sessionDidEnd(session: Session) {
 //        topLabel.text = "You've planted a cactus!"
-        performSegue(withIdentifier: "showBreak", sender: nil)
+//        performSegue(withIdentifier: "showBreak", sender: nil)
         
         pickerView.isHidden = false
         plantButton.isHidden = false
-//        countdownLabel.isHidden = true
-//        giveUpButton.isHidden = true
+        countDownLabel.isHidden = true
+        giveUpButton.isHidden = true
 //        cancelButton.isHidden = true
     }
     
     func sessionDidCancel() {
         pickerView.isHidden = false
         plantButton.isHidden = false
-//        countdownLabel.isHidden = true
-//        giveUpButton.isHidden = true
+        countDownLabel.isHidden = true
+        giveUpButton.isHidden = true
 //        cancelButton.isHidden = true
     }
 
