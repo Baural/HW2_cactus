@@ -11,6 +11,7 @@ import UIKit
 class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, SessionManagerDelegate {
     
     @IBOutlet var countDownLabel: UILabel!
+    @IBOutlet var cancelButton: UIButton!
     @IBOutlet var cactusImageView: UIImageView!
     @IBOutlet var plantButton: UIButton!
     @IBOutlet var pickerView: UIPickerView!
@@ -71,9 +72,9 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         pickerView.isHidden = true
         plantButton.isHidden = true
         countDownLabel.isHidden = false
-//        cancelButton.isHidden = false
+        cancelButton.isHidden = false
 
-//        updateCancelButtonTitle(secondsLeft: 10)
+        updateCancelButtonTitle(secondsLeft: 10)
     }
     
     func sessionTimeLeftChanged(session: Session, secondsLeft: Int) {
@@ -81,9 +82,9 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         
         let secondsPassed = session.durationInSeconds - secondsLeft
         if secondsPassed < 10 {
-//            updateCancelButtonTitle(secondsLeft: 10 - secondsPassed)
+            updateCancelButtonTitle(secondsLeft: 10 - secondsPassed)
         } else if secondsPassed == 10 {
-//            cancelButton.isHidden = true
+            cancelButton.isHidden = true
             giveUpButton.isHidden = false
         }
     }
@@ -94,13 +95,13 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     func sessionDidEnd(session: Session) {
 //        topLabel.text = "You've planted a cactus!"
-//        performSegue(withIdentifier: "showBreak", sender: nil)
+        performSegue(withIdentifier: "showBreak", sender: nil)
         
         pickerView.isHidden = false
         plantButton.isHidden = false
         countDownLabel.isHidden = true
         giveUpButton.isHidden = true
-//        cancelButton.isHidden = true
+        cancelButton.isHidden = true
     }
     
     func sessionDidCancel() {
@@ -108,7 +109,16 @@ class SessionViewController: UIViewController, UIPickerViewDataSource, UIPickerV
         plantButton.isHidden = false
         countDownLabel.isHidden = true
         giveUpButton.isHidden = true
-//        cancelButton.isHidden = true
+        cancelButton.isHidden = true
+    }
+    
+    func updateCancelButtonTitle(secondsLeft: Int) {
+        let title = "Cancel (\(secondsLeft))"
+        
+        UIView.performWithoutAnimation {
+            cancelButton.setTitle(title, for: .normal)
+            cancelButton.layoutIfNeeded()
+        }
     }
 
 

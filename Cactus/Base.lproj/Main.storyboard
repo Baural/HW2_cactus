@@ -99,6 +99,12 @@
                                 <rect key="frame" x="0.0" y="441" width="414" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:36" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-4A-C7L">
+                                <rect key="frame" x="169.5" y="427.5" width="75.5" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <color key="textColor" name="primaryColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbC-KS-alX">
                                 <rect key="frame" x="36" y="551" width="343" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,12 +113,14 @@
                                     <color key="titleColor" name="textColor"/>
                                 </state>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:36" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdM-4A-C7L">
-                                <rect key="frame" x="169.5" y="427.5" width="75.5" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
-                                <color key="textColor" name="primaryColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VQ-v0-UBS">
+                                <rect key="frame" x="145" y="528" width="124" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Cancel (x)">
+                                    <color key="titleColor" name="textColor"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
@@ -124,10 +132,12 @@
                     <navigationItem key="navigationItem" id="4gQ-d7-qKY"/>
                     <connections>
                         <outlet property="cactusImageView" destination="Q5R-vf-v7u" id="f2m-4A-avy"/>
+                        <outlet property="cancelButton" destination="6VQ-v0-UBS" id="LJY-Zd-5gM"/>
                         <outlet property="countDownLabel" destination="rdM-4A-C7L" id="hat-9o-pvI"/>
                         <outlet property="giveUpButton" destination="KbC-KS-alX" id="wmb-r3-gxF"/>
                         <outlet property="pickerView" destination="q6Y-l4-MWO" id="lqy-n3-MQI"/>
                         <outlet property="plantButton" destination="UMA-ec-Ypc" id="j1g-EW-AjG"/>
+                        <segue destination="D29-hr-oqP" kind="presentation" identifier="showBreak" modalPresentationStyle="automatic" id="8Xq-yo-VOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -139,14 +149,14 @@
             <objects>
                 <viewController id="D29-hr-oqP" customClass="BreakViewController" customModule="Cactus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sjo-Ye-HxS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-Ve-Ujv">
                                 <rect key="frame" x="36" y="725" width="343" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="primaryColor"/>
-                                <state key="normal" title="Give up">
+                                <state key="normal" title="Take a break">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -181,6 +191,7 @@
                         <color key="backgroundColor" name="backgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="VZY-Cl-dVH"/>
                     </view>
+                    <navigationItem key="navigationItem" id="si4-Wi-h9T"/>
                     <connections>
                         <outlet property="cactusImageView" destination="Avp-r9-JAI" id="qLI-Sv-5fP"/>
                     </connections>
